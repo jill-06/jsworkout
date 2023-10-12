@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    
+    <script>
+// Array codes
+
+        const arr = [8, 7, 6, 5, 8,8,6];
+        const uniqueArray = [];
+        const duplicateIndex = [];
+        
+
+        for (let i = 0; i < arr.length; i++) {
+            if (uniqueArray.indexOf(arr[i]) === -1) {
+                uniqueArray.push(arr[i]);
+             } 
+        }
+
+        function filterDuplicates(array) {
+            return array.filter((value, index, self) => {
+                return self.indexOf(value) !== index;
+            });
+        }
+        var duplicateArray= filterDuplicates(arr);
+       
+        const evenElements = arr.map((element) => {
+            if (element % 2 === 0) {
+            return element; 
+            }
+            return null; 
+            }).filter((element) => element !== null);
+
+        const oddElements = arr.map((element) => {
+            if (element % 2 !== 0) {
+            return element; 
+            }
+            return null; 
+            }).filter((element) => element !== null);
+
+        console.log("Parent Array:"+ arr);
+        console.log("New Array without Duplicates:"+ uniqueArray);
+        console.log("Duplicates :"+ duplicateArray);
+        console.log("Even Elements:"+ evenElements);
+        console.log("Odd Elements:"+ oddElements);
+
+
+//String Code - split join
+    var input = "This is my angular app";
+    var words = input.split(' ');
+    var output = words.join('-');
+    console.log(output);
+
+        const donut = {
+            "id": "0001",
+            "type": "donut",
+            "name": "Cake",
+            "ppu": 0.55,
+            "batters": {
+                "batter": [
+                    {
+                        "id": "1001",
+                        "type": "Regular"
+                    },
+                    {
+                        "id": "1002",
+                        "type": "Chocolate"
+                    },
+                    {
+                        "id": "1003",
+                        "type": "Blueberry"
+                    },
+                    {
+                        "id": "1004",
+                        "type": "Devil's Food"
+                    }
+                ]
+            },
+            "topping": [
+                {
+                    "id": "5001",
+                    "type": "None"
+                },
+                {
+                    "id": "5002",
+                    "type": "Glazed"
+                },
+                {
+                    "id": "5005",
+                    "type": "Sugar"
+                },
+                {
+                    "id": "5007",
+                    "type": "Powdered Sugar"
+                },
+                {
+                    "id": "5006",
+                    "type": "Chocolate with Sprinkles"
+                },
+                {
+                    "id": "5003",
+                    "type": "Chocolate"
+                },
+                {
+                    "id": "5004",
+                    "type": "Maple"
+                }
+            ]
+        };
+        const toppings = donut.topping.map((item) => {
+            return { id: item.id, type: item.type };
+        });
+
+        const batters = donut.batters.batter.map((item) => {
+            return { id: item.id, type: item.type };
+        });
+
+        // Log the extracted arrays to the console
+        console.log("Toppings:", toppings);
+        console.log("Batters:", batters);
+    </script>
+</body>
+</html>
